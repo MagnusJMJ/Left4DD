@@ -24,27 +24,3 @@ D                   A
 E                   L
 R E D L O H E C A L P
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Placeholder.
