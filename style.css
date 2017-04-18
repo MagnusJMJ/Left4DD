@@ -1,5 +1,15 @@
 * {
-  font-family: Helvetica;
+  font-family: "Facebook", sans-serif;
+  color: White;
+  animation: fadein 2s;
+}
+@keyframes {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@font-face {
+  font-family: Facebook;
+  src: url(https://magnusjmj.github.io/LEFT4DD/assets/fb.otf);
 }
 h1 {
   font-size: 48;
@@ -8,5 +18,5 @@ h3 {
   font-size: 24;
 }
 body {
-  background-color: DarkSlateGray;
+  background-color: #3D5A80;
 }
