@@ -1,18 +1,51 @@
-var dividers = document.getElementsByTagName('div');
-var pageNum = 0;
-function nextPage() {
-  dividers[pageNum].style('display', 'none');
-  dividers[pageNum+1].style('display', 'inline-block');
-  pageNum++;
+var person = {
+  firstname: null,
+  middlename: null,
+  lastname: null,
+  country: null,
+  city: null,
+  street: null,
+  houseNr: null
+};
+
+{
+  let pages = document.getElementsByTagName('div');
+  let n = 0;
+  function nextPage() {
+    pages[n].style.display = 'none';
+    pages[n+1].style.display = 'inline-block';
+    n++;
+  }
+  function prevPage() {
+    pages[n].style.display = 'none';
+    pages[n-1].style.display = 'inline-block';
+    n--;
+  }
 }
-function prevPage() {
-  dividers[pageNum].style('display', 'none');
-  dividers[pageNum-1].style('display', 'inline-block');
-  pageNum--;
+
+{
+  var textInputs = document.getElementsByTagName('input');
+  let n = 0;
+  while (n < textInputs.length) {
+    textInputs[n].addEventListener('click', function() {
+      this.value = '';
+    });
+    textInputs[n].addEventListener('focusout', function() {
+      if (!this.value) { this.value = 'Invalid!'; }
+    });
+    n++;
+  }
 }
+
 /*
-var textInputs = document.getElementsByTagName('input');
-for (i = 0; i < textInputs.length; i++) {
-  textInputs[i].
+function calcWorth() {
+  if (Object.keys(person).length == textInputs.length) {
+    let n = 0;
+    for (prop in person) {
+      prop = textInputs[n].value;
+      console.log(prop);
+      n++;
+    }
+  }
 }
 */

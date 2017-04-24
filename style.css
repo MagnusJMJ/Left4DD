@@ -14,6 +14,7 @@
 }
 body {
   background-color: #3D5A80;
+  margin-top: 30vh;
 }
 #frontpage {
   display: inline-block;
