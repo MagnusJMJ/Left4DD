@@ -1,3 +1,4 @@
+console.log('p5.dom, check!');
 /*! p5.dom.js v0.3.1 Jan 3, 2017 */
 /**
  * <p>The web is much more than just canvas and p5.dom makes it easy to interact

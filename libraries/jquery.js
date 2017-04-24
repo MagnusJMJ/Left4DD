@@ -1,3 +1,4 @@
+console.log('jQuery, check!');
 /*!
  * jQuery JavaScript Library v3.1.1
  * https://jquery.com/
