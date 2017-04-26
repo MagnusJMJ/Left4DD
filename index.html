@@ -3,64 +3,19 @@
   <head>
     <title>Left4DD - Final Project</title>
     <meta charset="UTF-8">
-    <!-- Libraries -->
     <script type="text/javascript" src="libraries/p5.js"></script>
     <script type="text/javascript" src="libraries/p5.dom.js"></script>
     <script type="text/javascript" src="libraries/p5.sound.js"></script>
     <script type="text/javascript" src="libraries/rita.js"></script>
     <script type="text/javascript" src="libraries/jquery.js"></script>
-    <!-- Stylesheet -->
-    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <script type="text/javascript" src="script.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
   </head>
   <body>
-    <!--
-      Dividers denote individual "pages" in the same HTML document.
-      We can use a combination of HTML/CSS/JS to simulate different
-      pages in the same document to save the trouble of having sev-
-      eral HTML-files.
-    -->
-    <div id="frontpage">
-      <h1>Sign up now!</h1>
-      <br>
-      <h3>Our amazing product is just a few clicks away!</h3>
-      <br>
-      <button type="button" onclick="nextPage()">Sign Up</button>
-    </div>
-    <div id="page1">
-      <h3>What is your name?</h3>
-      <br>
-      <form id="form1" autocomplete="off">
-        <input type="text" value="First">
-        <input type="text" value="Middle">
-        <input type="text" value="Last">
-      </form>
-      <br>
-      <button type="button" onclick="prevPage()">Previous</button>
-      <button type="button" onclick="nextPage()">Next</button>
-    </div>
-    <div id="page2">
-      <h3>Where do you live?</h3>
-      <br>
-      <form id="form2" autocomplete="off">
-        <input type="text" value="Country">
-        <input type="text" value="City">
-        <input type="text" value="Street">
-        <input type="text" value="Number">
-      </form>
-      <button type="button" onclick="prevPage()">Previous</button>
-      <button type="button" onclick="nextPage()">Next</button>
-    </div>
-    <div id="page3">
-      <h3>Page 3 Test</h3>
-      <br>
-      <button type="button" onclick="prevPage()">Previous</button>
-      <button type="button" onclick="nextPage()">Next</button>
-    </div>
-    <!--
-      NB: JavaScript is run last because all the HTML
-      elements it refers to have to be initialized first
-      in order for the script to work.
-    -->
-    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

@@ -1,0 +1,43 @@
+* {
+  font-family: "Gidolinya", Helvetica, sans-serif;
+  text-align: center;
+  color: White;
+  animation: fadein 1s;
+}
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@font-face {
+  font-family: Gidolinya;
+  src: url(assets/Gidolinya.otf);
+}
+body {
+  background-color: #3D5A80;
+  margin-top: 30vh;
+}
+#frontpage {
+  display: inline-block;
+}
+div:not(#frontpage) {
+  display: none;
+}
+h1 {
+  font-size: 64;
+}
+h3 {
+  font-size: 36;
+}
+button, input {
+  font-size: 24;
+  background-color: #3D5A80;
+  opacity: .75;
+  width: 100px;
+  height: 30px;
+  border: none;
+  transition: opacity .5s, background-color .5s;
+}
+button:hover, input:hover {
+  opacity: 1;
+  background-color: #324A69;
+}
