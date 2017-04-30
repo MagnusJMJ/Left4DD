@@ -1,3 +1,12 @@
+/* *********************************************************
+   ** Left4DD Final Project Super Happy Go-Go Supreme(tm) **
+   *********************************************************
+   TODO:
+    * Find out what to do with user input
+    * Define some global CSS rules to make things pretty
+    * Figure out visualization
+*/
+
 // initialization of global variables
 var cat     = 0, // 'cat' and 'subCat' are counters to keep
     subCat  = 0, // track of which page is currently showing
@@ -14,7 +23,7 @@ var cat     = 0, // 'cat' and 'subCat' are counters to keep
 function setup() {
 
   // nested for-loop fills the 2D array 'pages' and gives
-  // each object the appropriate header (see array 'headers')
+  // each object the appropriate header argument (see array 'headers')
   for (i = 0; i < headers.length; i++) {
     pages[i] = [];
     for (j = 0; j < headers[i].length; j++) {
@@ -26,8 +35,11 @@ function setup() {
         pages[i][j][element].hide();
       }
 
-      pages[i][j].submit.mousePressed(function(){submit(true);});
-      pages[i][j].noSubmit.mousePressed(function(){submit(false);});
+      // Links the function 'submit' to all the buttons. 'submit' is wrapped in
+      // an anonymous function to avoid a bug where the function fires in the
+      // two following lines (which it isn't supposed to)
+      pages[i][j].submit.mousePressed(function(){submit(false);});
+      pages[i][j].noSubmit.mousePressed(function(){submit(true);});
     }
   }
 
@@ -46,23 +58,23 @@ function submit(orNot) {
     pages[cat][subCat][element].hide();
   }
 
-  // if user chose 'submit', continue to next page
-  if (!orNot) {
-    if (subCat == pages[cat].length-1) {
-      cat++;
-      subCat = 0;
-    }
-    for (element in pages[cat][subCat]) {
-      pages[cat][subCat][element].show();
-    }
+  // TEST: log user input to console
+  console.log(pages[cat][subCat].textInput.value());
 
-  // if user chose "don't submit", skip to next category
-  } else {
-    for (element in pages[cat+1][0]) {
-      pages[cat+1][0][element].show();
-    }
+  // IF user chose 'Don't submit' OR user is on the last page of
+  // this category, skip to the first question in next category.
+  if (orNot || subCat == pages[cat].length-1) {
     cat++;
     subCat = 0;
+  // ELSE go to the next question in this category
+  } else {
+    subCat++;
+  }
+
+  // now that 'cat' and 'subCat' have been changed
+  // appropriately, show the "new" page.
+  for (element in pages[cat][subCat]) {
+    pages[cat][subCat][element].show();
   }
 }
 
