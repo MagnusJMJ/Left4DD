@@ -1,34 +1,44 @@
-var cat = 0;
-var subCat = 0;
-var headers = [
-  ['First name', 'Middle name', 'Last name'],
-  ['Country', 'City', 'Street', 'House-#'    ],
-  ['Education level', 'Job', 'Company', 'salary', 'Company address'],
-  ['Sex', 'Gender', 'Sexual orientation'],
-  [''],
-  []
-];
-var pages = [];
+// initialization of global variables
+var cat     = 0, // 'cat' and 'subCat' are counters to keep
+    subCat  = 0, // track of which page is currently showing
+    pages   = [], // 'pages' will be a 2D array that contains
+    headers = [   // objects of the 'Page' type (see constructor)
+      ['First name', 'Middle name', 'Last name'],
+      ['Country', 'City', 'Street', 'House-#'],
+      ['Education level', 'Job', 'Company', 'salary', 'Company address'],
+      ['Sex', 'Gender', 'Sexual orientation'],
+      [''],
+      []
+    ];
 
 function setup() {
+
+  // nested for-loop fills the 2D array 'pages' and gives
+  // each object the appropriate header (see array 'headers')
   for (i = 0; i < headers.length; i++) {
     pages[i] = [];
     for (j = 0; j < headers[i].length; j++) {
       pages[i][j] = new Page(headers[i][j]);
+
+      // additional for/in-loop goes through each element of each 'Page'
+      // object and hides them. (Implied CSS-rule: "display: none;")
       for (element in pages[i][j]) {
         pages[i][j][element].hide();
       }
+
       pages[i][j].submit.mousePressed(function(){submit(true);});
       pages[i][j].noSubmit.mousePressed(function(){submit(false);});
     }
   }
+
+  // for/in-loop goes through each element of the first page and shows it
+  // (Implied CSS-rule: "display: inline-block")
   for (element in pages[0][0]) {
     pages[0][0][element].show();
   }
 }
 
 // function to call when a button is pressed
-// TODO: Fucking fix the damn thing
 function submit(orNot) {
 
   // hide current page
