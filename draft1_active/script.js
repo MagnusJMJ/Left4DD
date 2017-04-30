@@ -9,9 +9,10 @@
 
 // initialization of global variables
 var cat     = 0, // 'cat' and 'subCat' are counters to keep
-    subCat  = 0, // track of which page is currently showing
+    subCat  = 0, // track of which page is currently showing.
+    person  = {}, // Person is an empty object we will push user input to.
     pages   = [], // 'pages' will be a 2D array that contains
-    headers = [   // objects of the 'Page' type (see constructor)
+    headers = [   // objects of the 'Page' type (see constructor).
       ['First name', 'Middle name', 'Last name'],
       ['Country', 'City', 'Street', 'House-#'],
       ['Education level', 'Job', 'Company', 'salary', 'Company address'],
@@ -50,6 +51,13 @@ function setup() {
   }
 }
 
+// TEST: Write content of object to new JSON file.
+function keyPressed() {
+  if (keyCode == 32) {
+    saveJSON(person, 'newperson.json', false);
+  }
+}
+
 // function to call when a button is pressed
 function submit(orNot) {
 
@@ -58,8 +66,8 @@ function submit(orNot) {
     pages[cat][subCat][element].hide();
   }
 
-  // TEST: log user input to console
-  console.log(pages[cat][subCat].textInput.value());
+  // TEST: log user input to object for later export as JSON
+  person[headers[cat][subCat]] = pages[cat][subCat].textInput.value();
 
   // IF user chose 'Don't submit' OR user is on the last page of
   // this category, skip to the first question in next category.
