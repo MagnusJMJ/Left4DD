@@ -5,6 +5,8 @@
     * Find out what to do with user input
     * Define some global CSS rules to make things pretty
     * Figure out visualization
+	* Figure out the right questions
+	* placed the objekts
 */
 
 // initialization of global variables
@@ -12,12 +14,13 @@ var cat     = 0, // 'cat' and 'subCat' are counters to keep
     subCat  = 0, // track of which page is currently showing.
     person  = {}, // Person is an empty object we will push user input to.
     pages   = [], // 'pages' will be a 2D array that contains
+	catheaders = ["Name", "Location","Employment", "Sex","Get your f**king password"],
     headers = [   // objects of the 'Page' type (see constructor).
       ['First name', 'Middle name', 'Last name'],
       ['Country', 'City', 'Street', 'House-#'],
-      ['Education level', 'Job', 'Company', 'salary', 'Company address'],
-      ['Sex', 'Gender', 'Sexual orientation'],
-      [''],
+      ['Education level', 'Job', 'Company', 'Salary', 'Company address'],
+      ['Gender', 'Sexual orientation'],
+      ['1. try',"not good enough"," longer","you fucked up u cunt"],
       []
     ];
 
@@ -28,7 +31,7 @@ function setup() {
   for (i = 0; i < headers.length; i++) {
     pages[i] = [];
     for (j = 0; j < headers[i].length; j++) {
-      pages[i][j] = new Page(headers[i][j]);
+      pages[i][j] = new Page(catheaders[i], headers[i][j]);
 
       // additional for/in-loop goes through each element of each 'Page'
       // object and hides them. (Implied CSS-rule: "display: none;")
@@ -43,7 +46,17 @@ function setup() {
       pages[i][j].noSubmit.mousePressed(function(){submit(true);});
     }
   }
-
+	{
+		pages[pages.length-1].push(new EndPage);
+		
+		// forgive me father for I have sinned
+		let lastPage = pages[pages.length-1][pages[pages.length-1].length-1];
+		
+	
+	for (element in lastPage) {
+		lastPage[element].hide();
+	}
+	}
   // for/in-loop goes through each element of the first page and shows it
   // (Implied CSS-rule: "display: inline-block")
   for (element in pages[0][0]) {
@@ -75,7 +88,11 @@ function submit(orNot) {
     cat++;
     subCat = 0;
   // ELSE go to the next question in this category
-  } else {
+  } else if (cat == headers.length - 1 && subCat == headers[headers.length - 1]){ 
+	  console.log("end page")
+  }
+	
+	else {
     subCat++;
   }
 
@@ -87,9 +104,16 @@ function submit(orNot) {
 }
 
 // page constructor
-function Page(header) {
-  this.header    = createElement('h1', header);
+function Page(cathead, header) {
+  this.catheader = createElement("h1",cathead)
+  this.header    = createElement('h2', header);
   this.textInput = createInput('');
   this.submit    = createButton('Submit');
   this.noSubmit  = createButton('Don\'t Submit');
+
+}
+
+function EndPage() {
+	this.test = createElement("h1", "WOW IT WORKED");
+	this.test2 = createElement("p", "kinda");
 }
