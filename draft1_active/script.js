@@ -27,7 +27,8 @@ var cat        = 0, // 'cat' and 'subCat' are counters to keep
       [''],
       [''],
       [''],
-    ];
+    ],
+    // TODO: Make arrays of options for all checkbox pages. Make 'Page2' contructor have appropriate number of checkboxes.
 
 function setup() {
 
@@ -133,6 +134,9 @@ function Page2(cathead, header) {
   this.catheader = createElement("h1",cathead);
   this.header    = createElement('h2', header);
   this.checkBox  = createCheckbox('');
+  for ( i = 0; i < array.length; i++) {
+    array[i]
+  }
   this.submit    = createButton('Submit');
   this.noSubmit  = createButton('Don\'t Submit');
 }
