@@ -28,4 +28,9 @@ button, input {
 
 button:hover {
   background-color: Crimson;
+  display: block;
+}
+
+p {
+  display: none;
 }
