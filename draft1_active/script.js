@@ -10,18 +10,17 @@
 */
 
 // initialization of global variables
-var cat     = 0, // 'cat' and 'subCat' are counters to keep
-    subCat  = 0, // track of which page is currently showing.
-    person  = {}, // Person is an empty object we will push user input to.
-    pages   = [], // 'pages' will be a 2D array that contains
-	catheaders = ["Name", "Location","Employment", "Sex","Get your f**king password"],
-    headers = [   // objects of the 'Page' type (see constructor).
+var cat        = 0, // 'cat' and 'subCat' are counters to keep
+    subCat     = 0, // track of which page is currently showing.
+    person     = {}, // Person is an empty object we will push user input to.
+    pages      = [], // 'pages' will be a 2D array that contains
+	  catheaders = ["Name", "Location","Employment", "Sex","Get your f**king password"],
+    headers    = [   // objects of the 'Page' type (see constructor).
       ['First name', 'Middle name', 'Last name'],
       ['Country', 'City', 'Street', 'House-#'],
       ['Education level', 'Job', 'Company', 'Salary', 'Company address'],
       ['Gender', 'Sexual orientation'],
-      ['1. try',"not good enough"," longer","you fucked up u cunt"],
-      []
+      ['1. try',"not good enough"," longer","you fucked up u cunt"]
     ];
 
 function setup() {
@@ -46,17 +45,15 @@ function setup() {
       pages[i][j].noSubmit.mousePressed(function(){submit(true);});
     }
   }
-	{
-		pages[pages.length-1].push(new EndPage);
-		
-		// forgive me father for I have sinned
-		let lastPage = pages[pages.length-1][pages[pages.length-1].length-1];
-		
-	
+	pages[pages.length-1].push(new EndPage);
+
+	// forgive me father for I have sinned
+	var lastPage = pages[pages.length-1][pages[pages.length-1].length-1];
+
 	for (element in lastPage) {
 		lastPage[element].hide();
 	}
-	}
+
   // for/in-loop goes through each element of the first page and shows it
   // (Implied CSS-rule: "display: inline-block")
   for (element in pages[0][0]) {
@@ -64,9 +61,9 @@ function setup() {
   }
 }
 
-// TEST: Write content of object to new JSON file.
+// Write content of object to new JSON file.
 function keyPressed() {
-  if (keyCode == 32) {
+  if (keyCode == UP_ARROW) {
     saveJSON(person, 'newperson.json', false);
   }
 }
@@ -88,10 +85,10 @@ function submit(orNot) {
     cat++;
     subCat = 0;
   // ELSE go to the next question in this category
-  } else if (cat == headers.length - 1 && subCat == headers[headers.length - 1]){ 
+  } else if (cat == headers.length - 1 && subCat == headers[headers.length - 1]){
 	  console.log("end page")
   }
-	
+
 	else {
     subCat++;
   }

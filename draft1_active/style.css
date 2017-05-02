@@ -1,1 +1,19 @@
-/* Not in use at the moment */
+* {
+  font-family: Open Sans, sans-serif;
+  text-align: center;
+  animation: fadein 1s;
+}
+
+*:not(head) {
+  display: inline-block;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
