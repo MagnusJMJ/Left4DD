@@ -1,5 +1,6 @@
 * {
   font-family: Open Sans, sans-serif;
+  color: #E0FBFC;
   text-align: center;
   animation: fadein 1s;
 }
@@ -14,6 +15,17 @@
 }
 
 body {
+  background-color: #3D5A80;
   margin: 0;
   padding: 0;
+}
+
+button, input {
+  background-color: #2D425E;
+  margin-top: 20px;
+  border: none;
+}
+
+button:hover {
+  background-color: Crimson;
 }

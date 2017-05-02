@@ -47,7 +47,7 @@ function setup() {
   }
 	pages[pages.length-1].push(new EndPage);
 
-	// forgive me father for I have sinned
+	// WE HAVE TO GO DEEPER
 	var lastPage = pages[pages.length-1][pages[pages.length-1].length-1];
 
 	for (element in lastPage) {
