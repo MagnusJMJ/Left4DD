@@ -1,12 +1,4 @@
-var person = {
-  firstname: null,
-  middlename: null,
-  lastname: null,
-  country: null,
-  city: null,
-  street: null,
-  houseNr: null
-};
+var person = {};
 
 {
   let pages = document.getElementsByTagName('div');
