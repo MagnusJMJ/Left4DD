@@ -14,6 +14,20 @@
   to   { opacity: 1; }
 }
 
+h1 {
+  font-size: 56px;
+  text-align: left;
+}
+
+h2 {
+  text-align: left;
+  font-size: 32px;
+}
+
+div {
+  text-align: left
+}
+
 body {
   background-color: #3D5A80;
   margin: 0;
@@ -24,6 +38,29 @@ button, input {
   background-color: #2D425E;
   margin-top: 20px;
   border: none;
+}
+
+[type=text] {
+  width: 250px;
+  height: 25px;
+  position: absolute;
+}
+
+[type=checkbox] {
+  width: 35px;
+  height: 35px;
+}
+
+button {
+  opacity: .75;
+  transition: opacity .25s ease-in-out;
+  width: 100px;
+  height: 50px;
+  font-size: 24;
+}
+
+button:hover {
+  opacity: 1;
 }
 /*
 button:hover {

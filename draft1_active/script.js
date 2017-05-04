@@ -14,7 +14,7 @@ var cat        = 0, // 'cat' and 'subCat' are counters to keep
     subCat     = 0, // track of which page is currently showing.
     person     = {}, // Person is an empty object we will push user input to.
     pages      = [], // 'pages' will be a 2D array that contains
-	  catheaders = ["Name", "Age", "Location", "Employment", "Sex", "Hobbies", "Sports", "Medical", "Insurance", "Religion", 'Strength of Belief'],
+	  catheaders = ["Account", "Name", "Age", "Location", "Employment", "Sex", "Hobbies", "Sports", "Medical", "Insurance", "Religion", 'Strength of Belief'],
     multChoice = {
       age:['18-25', '26-35', '36-45', '46-55', '56-65', '66+'],
       hobbies:['Fishing', 'Technology', 'Fitness', 'Art', 'Crafts', 'Gaming', 'Gardening', 'Cooking'],
@@ -25,6 +25,7 @@ var cat        = 0, // 'cat' and 'subCat' are counters to keep
       strength:['1', '2', '3', '4', '5']
     },
     headers    = [   // objects of the 'Page' type (see constructor).
+      ['Username', 'Password', 'Repeat Password'],
       ['What is your first name?', 'What is your last name?', 'What is your middle name?'],
       [multChoice.age],
       ['Which Country do you live in?', 'Which City do you live in?', 'Which Street do you live on?', 'What House number do you have?'],
@@ -40,6 +41,7 @@ var cat        = 0, // 'cat' and 'subCat' are counters to keep
 console.log('Variable initialization')
 
 function setup() {
+  noCanvas();
 
   // nested for-loop fills the 2D array 'pages' and gives
   // each object the appropriate header argument (see array 'headers')
@@ -157,6 +159,8 @@ function pageType(arg1, arg2) {
       }
       console.log('Created Page of Type 1');
   }
+  newPage.submit.position((window.innerWidth/2)-200, (window.innerHeight/10)*8);
+  newPage.noSubmit.position((window.innerWidth/2)+150, (window.innerHeight/10)*8);
   return newPage;
 }
 
@@ -173,10 +177,11 @@ function Page2(cathead, arg2) {
   this.catheader = createElement("h1",'');
   this.header    = createElement('h2', cathead);
   this.options   = [];
+  var container = createDiv('');
   for (n = 0; n < arg2.length; n++) {
     this.options.push(createCheckbox(arg2[n], false));
     this.options[n].id(arg2[n]);
-    createElement('br');
+    this.options[n].parent(container);
   }
   this.submit    = createButton('Submit');
   this.noSubmit  = createButton('Don\'t Submit');
