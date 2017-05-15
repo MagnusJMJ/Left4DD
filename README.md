@@ -1,8 +1,8 @@
-![LifeEnhancer](https://goo.gl/k1Nr35)
+![LifeEnhancer](https://cdn.rawgit.com/MagnusJMJ/Left4DD/2ebc33f5/Pictures/LifeEnhancer.PNG)
 
-![SignUp](https://goo.gl/u2tq0B)
+![SignUp](https://cdn.rawgit.com/MagnusJMJ/Left4DD/2ebc33f5/Pictures/V%C3%A6lgNoget.PNG)
 
-![Commercials](goo.gl/1As15M)
+![Commercials](https://github.com/MagnusJMJ/Left4DD/blob/master/Pictures/Commercialz.PNG)
 
 # D-CEIVE - Data Commercialization ExtractIng ValuE
 For this project we decided to focus on cybercapitalism and personalized advertisements, as presented by Renée Ridgway(1). We look at how data has become a currency in our digital culture, how this data is being extracted through hidden processes and used by companies to generate profit.
@@ -23,7 +23,7 @@ The program functions as a normal, albeit long, signup-process, where the user f
 At the end the user is presented with what they assume is the end-page. This is disrupted by an animation of popup-ads, that increase exponentially in intensity. The visualization on the end-page is ordered in such a way, that whenever the user gives the system an input, that input is stored, and used to “call” upon the ads at the end screen. Here they are being drawn upon the canvas in random positions, at exponentially increasing intervals.
 The less information the user shares throughout the process, the less personalized the advertisements on the end screen will be, as the data targeting the user aren’t necessarily available to personalize the process sufficiently.
 
-![FlowChart](https://goo.gl/Q0V6d0)
+![FlowChart](https://cdn.rawgit.com/MagnusJMJ/Left4DD/2ebc33f5/Pictures/flowchart_REALFINAL.png)
 
 ## Aesthetics of D-CEIVE
 Through our work we illustrate how sharing personal information translates into a resource, as it is monetized through marketing. Hereby we express a concern regarding digital marketing culture and big data.
