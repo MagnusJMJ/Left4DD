@@ -1,4 +1,4 @@
-!(LifeEnhancer)[https://goo.gl/g7ymGz]
+![LifeEnhancer](https://goo.gl/g7ymGz)
 # D-CEIVE - Data Commercialization ExtractIng ValuE
 For this project we decided to focus on cybercapitalism and personalized advertisements, as presented by Renée Ridgway(1). We look at how data has become a currency in our digital culture, how this data is being extracted through hidden processes and used by companies to generate profit.
 ## Program Description
