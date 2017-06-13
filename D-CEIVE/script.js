@@ -122,6 +122,12 @@ function setup() {
   pages[0][1].textInput.attribute('type', 'password');
   pages[0][2].textInput.attribute('type', 'password');
 }
+function keyPressed() {
+  if (KeyCode == 188) {
+    saveJSON(person, 'example.json');
+  }
+}
+
 // function to call when submit or dont submit button is pressed
 function submit(orNot) {
   // hide current page, check if is a checkbox page or input page.
